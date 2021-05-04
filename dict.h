@@ -81,9 +81,9 @@ private:
     TNode<Key, Val>* ReadNode(TNode<Key, Val>* parent, std::istream& file);
     TNode<Key, Val>* FindNode(TNode<Key, Val>* node,const Key& key);
     TNode<Key, Val>* Insert(TNode<Key, Val>* node,const Key& key);
-    const char* FileHeader = "treapster";
+    const static char* FileHeader;
     TNode<Key, Val>* root;
     int Size_;
 };
-
+template<typename Key, typename Val> const char* TDict<Key, Val>::FileHeader = "treapster";
 #include "dict.cpp"
